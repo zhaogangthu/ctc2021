@@ -1,3 +1,7 @@
+
+import sys
+sys.path.insert(0,'/home/qa/zg/ctc2021')
+
 import argparse
 import os
 from random import seed
