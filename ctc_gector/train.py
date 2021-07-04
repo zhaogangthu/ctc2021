@@ -1,4 +1,6 @@
 
+import os
+os.environ["CUDA_VISIBLE_DEVICES"] = "3"
 import sys
 sys.path.insert(0,'/home/qa/zg/ctc2021')
 
