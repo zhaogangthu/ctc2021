@@ -209,9 +209,9 @@ def main(args):
 if __name__ == '__main__':
     # read parameters
     parser = argparse.ArgumentParser()
-    parser.add_argument('--train_set',default='D:/software/CTC2021-main/train_small/train_small.json',
+    parser.add_argument('--train_set',default='train_small/train_small.json',
                         help='Path to the train data')
-    parser.add_argument('--dev_set',default='D:/software/CTC2021-main/train_small/dev_input.txt',
+    parser.add_argument('--dev_set',default='train_small/dev_input.txt',
                         help='Path to the dev data')
     parser.add_argument('--model_dir',default='model',
                         help='Path to the model dir')
