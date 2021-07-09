@@ -1,6 +1,6 @@
 
 import os
-os.environ["CUDA_VISIBLE_DEVICES"] = "3"
+os.environ["CUDA_VISIBLE_DEVICES"] = "1"
 import sys
 sys.path.insert(0,'/home/qa/zg/ctc2021')
 
@@ -211,9 +211,9 @@ def main(args):
 if __name__ == '__main__':
     # read parameters
     parser = argparse.ArgumentParser()
-    parser.add_argument('--train_set',default='/home/qa/zg/ctc2021/train_small/train_small.json',
+    parser.add_argument('--train_set',default='D:\software\CTC2021-main/train_small/out_train.txt',
                         help='Path to the train data')
-    parser.add_argument('--dev_set',default='/home/qa/zg/ctc2021/train_small/dev_input.txt',
+    parser.add_argument('--dev_set',default='D:\software\CTC2021-main/train_small/out_dev.txt',
                         help='Path to the dev data')
     parser.add_argument('--model_dir',default='model',
                         help='Path to the model dir')
@@ -224,7 +224,7 @@ if __name__ == '__main__':
     parser.add_argument('--batch_size',
                         type=int,
                         help='The size of the batch.',
-                        default=32)
+                        default=1)
     parser.add_argument('--max_len',
                         type=int,
                         help='The max sentence length'
@@ -242,7 +242,7 @@ if __name__ == '__main__':
                         type=int,
                         help='The number of epoch with any improvements'
                              ' on validation set.',
-                        default=None)
+                        default=5)
     parser.add_argument('--skip_correct',
                         type=int,
                         help='If set than correct sentences will be skipped '
