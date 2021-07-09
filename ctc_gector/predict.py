@@ -87,7 +87,7 @@ if __name__ == '__main__':
     parser.add_argument('--batch_size',
                         type=int,
                         help='The size of hidden unit cell.',
-                        default=128)
+                        default=1)
     parser.add_argument('--lowercase_tokens',
                         type=int,
                         help='Whether to lowercase tokens.',
