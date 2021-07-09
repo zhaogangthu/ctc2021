@@ -1,6 +1,10 @@
 
 import os
 os.environ["CUDA_VISIBLE_DEVICES"] = "1"
+
+import sys
+sys.path.insert(0,'/home/qa/zg/ctc2021')
+
 import argparse
 
 from utils.helpers import read_lines
