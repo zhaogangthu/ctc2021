@@ -233,7 +233,7 @@ if __name__ == '__main__':
     parser.add_argument('--target_vocab_size',
                         type=int,
                         help='The size of target vocabularies.',
-                        default=1000)
+                        default=7000)
     parser.add_argument('--n_epoch',
                         type=int,
                         help='The number of epoch for training model.',
