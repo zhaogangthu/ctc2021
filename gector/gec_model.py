@@ -45,6 +45,7 @@ def get_weights_name(transformer_name, lowercase):
         return 'transfo-xl-wt103'
     if transformer_name == 'xlnet':
         return 'xlnet-base-cased'
+    return 'bert-base-chinese'
 
 
 class GecBERTModel(object):

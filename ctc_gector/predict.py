@@ -59,12 +59,12 @@ if __name__ == '__main__':
     # read parameters
     parser = argparse.ArgumentParser()
     parser.add_argument('--model_path',
-                        default='D:\software\CTC2021-main\ctc_gector\model/best.th',
+                        default='D:\software\ctc2021_baseline\ctc2021_baseline/pytorch_model.bin',
                         help='Path to the model file.', nargs='+',
                         required=False)
     parser.add_argument('--vocab_path',
                         help='Path to the model file.',
-                        default='D:\software\CTC2021-main\ctc_gector\model/vocabulary'  # to use pretrained models
+                        default='D:\software\CTC2021-main\ctc_gector\data\output_vocabulary'  # to use pretrained models
                         )
     parser.add_argument('--input_file',
                         default='D:\software\CTC2021-main/train_small/source_test.txt',
@@ -95,7 +95,7 @@ if __name__ == '__main__':
     parser.add_argument('--transformer_model',
                         #choices=['bert', 'gpt2', 'transformerxl', 'xlnet', 'distilbert', 'roberta', 'albert'],
                         help='Name of the transformer model.',
-                        default='roberta')
+                        default='D:\software\ctc2021_baseline\ctc2021_baseline')
     parser.add_argument('--iteration_count',
                         type=int,
                         help='The number of iterations of the model.',
