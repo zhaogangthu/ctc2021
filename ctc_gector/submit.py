@@ -58,7 +58,7 @@ def gen_submit_data(src,out,target):
             else:
                 f2.write(sid + ', -1'+'\n')
 if __name__=='__main__':
-    src='D:\software\CTC2021-main\ctc2021_qua/qua_input.txt'
-    out='D:\software\CTC2021-main\ctc_gector/qua_input_token_out3.txt'
-    target='D:\software\CTC2021-main/train_small/submit5.txt'
+    #src='D:\software\CTC2021-main\ctc2021_qua/qua_input.txt'
+    #out='D:\software\CTC2021-main\ctc_gector/qua_input_token_out3.txt'
+    #target='D:\software\CTC2021-main/train_small/submit5.txt'
     gen_submit_data(src,out,target)
