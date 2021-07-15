@@ -8,6 +8,7 @@ import torch.nn.functional as F
 from allennlp.modules.token_embedders.token_embedder import TokenEmbedder
 from allennlp.nn import util
 from transformers import AutoModel, PreTrainedModel
+from transformers import BertModel
 
 logger = logging.getLogger(__name__)
 
@@ -26,7 +27,9 @@ class PretrainedBertModel:
         if model_name in cls._cache:
             return PretrainedBertModel._cache[model_name]
 
-        model = AutoModel.from_pretrained(model_name)
+        #model = AutoModel.from_pretrained(model_name)
+        model=BertModel.from_pretrained(model_name)
+
         if cache_model:
             cls._cache[model_name] = model
 

@@ -9,6 +9,7 @@ from allennlp.data.tokenizers.token import Token
 from allennlp.data.vocabulary import Vocabulary
 from overrides import overrides
 from transformers import AutoTokenizer
+from transformers import BertTokenizer
 
 from utils.helpers import START_TOKEN
 
@@ -406,8 +407,9 @@ class PretrainedBertIndexer(WordpieceIndexer):
             logger.warning("Your BERT model appears to be uncased, "
                            "but your indexer is not lowercasing tokens.")
 
-        bert_tokenizer = AutoTokenizer.from_pretrained(
-            pretrained_model, do_lower_case=do_lowercase, do_basic_tokenize=False)
+        # bert_tokenizer = AutoTokenizer.from_pretrained(
+        #     pretrained_model, do_lower_case=do_lowercase, do_basic_tokenize=False)
+        bert_tokenizer=BertTokenizer.from_pretrained(pretrained_model, do_lower_case=do_lowercase, do_basic_tokenize=False)
 
         # to adjust all tokenizers
         if hasattr(bert_tokenizer, 'encoder'):
@@ -421,12 +423,12 @@ class PretrainedBertIndexer(WordpieceIndexer):
             bert_tokenizer.add_tokens([START_TOKEN])
             bert_tokenizer.vocab[START_TOKEN] = len(bert_tokenizer) - 1
 
-        if "roberta" in pretrained_model:
-            bpe_ranks = bert_tokenizer.bpe_ranks
-            byte_encoder = bert_tokenizer.byte_encoder
-        else:
-            bpe_ranks = {}
-            byte_encoder = None
+        # if "roberta" in pretrained_model:
+        #     bpe_ranks = bert_tokenizer.bpe_ranks
+        #     byte_encoder = bert_tokenizer.byte_encoder
+        # else:
+        bpe_ranks = {}
+        byte_encoder = None
 
         super().__init__(vocab=bert_tokenizer.vocab,
                          bpe_ranks=bpe_ranks,
